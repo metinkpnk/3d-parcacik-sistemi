@@ -222,6 +222,7 @@ export default function App() {
    */
   const requestCameraPermission = async () => {
     try {
+      console.log('🎥 Kamera izni isteniyor...');
       setCameraStatus('Kamera izni isteniyor...');
       setShowPermissionDialog(true);
       
@@ -234,19 +235,25 @@ export default function App() {
         } 
       });
       
+      console.log('✅ Kamera izni verildi, stream alındı:', stream);
+      
       // İzin verildi
       setCameraPermission('granted');
       setShowPermissionDialog(false);
       setCameraStatus('Kamera izni verildi ✓');
       
       // Test stream'ini kapat
-      stream.getTracks().forEach(track => track.stop());
+      stream.getTracks().forEach(track => {
+        console.log('🔄 Stream track kapatılıyor:', track);
+        track.stop();
+      });
       
+      console.log('🚀 MediaPipe başlatılıyor...');
       // MediaPipe'ı başlat
       initMediaPipe();
       
     } catch (err) {
-      console.error('Kamera izni hatası:', err);
+      console.error('❌ Kamera izni hatası:', err);
       setCameraPermission('denied');
       setShowPermissionDialog(false);
       
@@ -254,6 +261,8 @@ export default function App() {
         setCameraStatus('❌ Kamera izni reddedildi. Lütfen tarayıcı ayarlarından kamera erişimini etkinleştirin.');
       } else if (err.name === 'NotFoundError') {
         setCameraStatus('❌ Kamera bulunamadı. Cihazınızda kamera olduğundan emin olun.');
+      } else if (err.name === 'NotSupportedError') {
+        setCameraStatus('❌ HTTPS gerekli. Lütfen https:// ile erişin.');
       } else {
         setCameraStatus(`❌ Kamera hatası: ${err.message}`);
       }
@@ -265,6 +274,8 @@ export default function App() {
    */
   const initMediaPipe = async () => {
     try {
+      console.log('🤖 MediaPipe başlatılıyor...');
+      
       // Tarayıcı kamera desteği kontrolü
       if (!navigator.mediaDevices || !navigator.mediaDevices.getUserMedia) {
         throw new Error('Tarayıcı kamera erişimini desteklemiyor');
@@ -277,6 +288,8 @@ export default function App() {
         locateFile: (file) => `https://cdn.jsdelivr.net/npm/@mediapipe/hands/${file}`
       });
       
+      console.log('👋 MediaPipe Hands oluşturuldu');
+      
       // El takibi ayarları
       hands.setOptions({ 
         maxNumHands: 1,              // Maksimum 1 el takip et
@@ -284,6 +297,8 @@ export default function App() {
         minDetectionConfidence: 0.2, // Minimum tespit güven eşiği (düşük = daha hassas)
         minTrackingConfidence: 0.2   // Minimum takip güven eşiği
       });
+      
+      console.log('⚙️ MediaPipe ayarları yapıldı');
       
       /**
        * El takibi sonuçlarını işleme fonksiyonu
@@ -367,6 +382,7 @@ export default function App() {
 
       // Video elementi hazırsa kamerayı başlat
       if (videoRef.current) {
+        console.log('📹 Video elementi hazır, kamera başlatılıyor...');
         setCameraStatus('Kamera başlatılıyor...');
         
         try {
@@ -393,12 +409,17 @@ export default function App() {
             height: 480  // Kamera çözünürlüğü yükseklik
           });
           
+          console.log('🎬 MediaPipe Camera oluşturuldu, başlatılıyor...');
           camera.start(); // Kamerayı başlat
+          console.log('✅ Kamera başlatıldı!');
           setCameraStatus('Kamera bağlandı - elinizi gösterin');
         } catch (err) {
-          console.error('Kamera başlatma hatası:', err);
+          console.error('❌ Kamera başlatma hatası:', err);
           setCameraStatus(`Kamera başlatma hatası: ${err.message}`);
         }
+      } else {
+        console.error('❌ Video elementi bulunamadı!');
+        setCameraStatus('Video elementi bulunamadı');
       }
     } catch (err) {
       console.error('MediaPipe başlatma hatası:', err);
