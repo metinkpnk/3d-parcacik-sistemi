@@ -11,11 +11,16 @@ export default defineConfig({
     react(), // React plugin'ini etkinleştir (JSX, Fast Refresh vb.)
     basicSsl() // HTTPS desteği
   ],
+  base: process.env.NODE_ENV === 'production' ? '/3d-parcacik-sistemi/' : '/',
   server: {
     host: true, // Tüm network interface'lerinde dinle
     port: 5173, // Port numarası
     https: true, // HTTPS etkinleştir
   },
+  build: {
+    outDir: 'dist',
+    assetsDir: 'assets',
+  }
 })
 
 

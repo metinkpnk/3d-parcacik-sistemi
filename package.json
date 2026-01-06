@@ -3,10 +3,12 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
+  "homepage": "https://[kullanici-adi].github.io/3d-parcacik-sistemi",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "deploy": "npm run build && gh-pages -d dist"
   },
   "dependencies": {
     "@mediapipe/hands": "^0.4.1675469240",
@@ -21,6 +23,7 @@
     "@types/react-dom": "^18.2.15",
     "@vitejs/plugin-basic-ssl": "^2.1.0",
     "@vitejs/plugin-react": "^4.1.1",
+    "gh-pages": "^6.3.0",
     "vite": "^5.0.0"
   }
 }
