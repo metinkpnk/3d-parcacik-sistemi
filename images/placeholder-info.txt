@@ -1,0 +1,52 @@
+📸 GÖRSEL PLACEHOLDER BİLGİLERİ
+
+Bu klasöre aşağıdaki görselleri eklemeniz gerekiyor:
+
+ZORUNLU GÖRSELLER:
+==================
+
+1. main-demo.gif (Ana demo videosu)
+   - Boyut: 800x600 px
+   - Süre: 5-10 saniye
+   - İçerik: El takibi ile parçacık etkileşimi
+
+2. interface.png (Ana arayüz)
+   - Boyut: 1920x1080 px
+   - İçerik: Tam ekran arayüz görünümü
+
+3. saturn.png (Satürn şekli)
+   - Boyut: 800x600 px
+   - İçerik: Satürn parçacık şekli
+
+4. heart.png (Kalp şekli)
+   - Boyut: 800x600 px
+   - İçerik: Kalp parçacık şekli
+
+5. sphere.png (Küre şekli)
+   - Boyut: 800x600 px
+   - İçerik: Küre parçacık şekli
+
+6. hand-tracking.png (El takibi)
+   - Boyut: 800x600 px
+   - İçerik: El landmark'ları görünür
+
+İSTEĞE BAĞLI GÖRSELLER:
+======================
+
+7. mobile-interface.png (Mobil arayüz)
+8. particle-interaction.gif (Parçacık etkileşimi)
+9. gesture-controls.gif (Jestiküler kontroller)
+10. zoom-demo.gif (Zoom özelliği)
+
+GÖRSEL ALMA TALİMATLARI:
+========================
+
+1. Projeyi çalıştırın: npm run dev
+2. http://localhost:5173 adresini açın
+3. Kamera iznini verin
+4. Her özelliği test edin
+5. F12 > Screenshot ile görsel alın
+6. Bu klasöre kaydedin
+
+NOT: README.md dosyasındaki görsel linkleri bu dosyaları referans ediyor.
+Görselleri eklemezseniz README'de bozuk linkler görünecek.

@@ -1,0 +1,319 @@
+/* ===== TEMEL UYGULAMA STİLLERİ ===== */
+
+/* Ana uygulama container'ı */
+.App {
+  text-align: center;        /* Metinleri ortala */
+  min-height: 100vh;         /* Minimum tam ekran yüksekliği */
+  display: flex;             /* Flexbox layout */
+  flex-direction: column;    /* Dikey sıralama */
+  align-items: center;       /* Yatay ortalama */
+  justify-content: center;   /* Dikey ortalama */
+  font-size: calc(10px + 2vmin); /* Responsive font boyutu */
+}
+
+/* Uygulama başlık alanı */
+.App-header {
+  background-color: #282c34; /* Koyu gri arka plan */
+  padding: 40px;             /* İç boşluk */
+  border-radius: 10px;       /* Yuvarlatılmış köşeler */
+  color: white;              /* Beyaz metin */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Hafif gölge efekti */
+}
+
+/* Ana başlık stilleri */
+h1 {
+  margin-bottom: 30px;       /* Alt boşluk */
+  color: #61dafb;           /* React mavi rengi */
+}
+
+/* Sayaç bölümü */
+.counter {
+  margin-top: 20px;         /* Üst boşluk */
+}
+
+.counter p {
+  font-size: 24px;          /* Büyük font */
+  margin-bottom: 20px;      /* Alt boşluk */
+}
+
+/* ===== BUTON STİLLERİ ===== */
+
+/* Genel buton stilleri */
+button {
+  background-color: #61dafb; /* React mavi arka plan */
+  border: none;              /* Kenarlık yok */
+  color: #282c34;           /* Koyu metin */
+  padding: 12px 24px;       /* İç boşluk */
+  margin: 5px;              /* Dış boşluk */
+  font-size: 16px;          /* Font boyutu */
+  font-weight: bold;        /* Kalın yazı */
+  border-radius: 5px;       /* Yuvarlatılmış köşeler */
+  cursor: pointer;          /* El işareti */
+  transition: background-color 0.3s ease; /* Yumuşak renk geçişi */
+}
+
+/* Buton hover (üzerine gelme) efekti */
+button:hover {
+  background-color: #4fa8c5; /* Daha koyu mavi */
+}
+
+/* Buton aktif (tıklama) efekti */
+button:active {
+  transform: scale(0.98);    /* Hafif küçültme efekti */
+}
+
+/* ===== RESPONSİVE TASARIM STİLLERİ ===== */
+
+/* Genel responsive ayarlar (tüm ekranlar için) */
+.controls-container {
+  flex-wrap: wrap !important;    /* Butonları alt satıra taşı */
+  gap: 8px !important;          /* Butonlar arası boşluk */
+  padding: 0 10px;              /* Yatay padding */
+  bottom: 60px !important;      /* Alt kenardan uzaklık */
+}
+
+/* Şekil seçim butonları */
+.shape-button {
+  padding: 8px 15px !important; /* İç boşluk */
+  font-size: 12px !important;   /* Font boyutu */
+}
+
+/* Zoom ve rotasyon kontrol grupları */
+.zoom-controls,
+.rotation-controls {
+  margin-left: 10px !important; /* Sol boşluk */
+}
+
+/* Zoom ve rotasyon butonları */
+.zoom-controls button,
+.rotation-controls button {
+  padding: 8px 12px !important; /* İç boşluk */
+  font-size: 16px !important;   /* Font boyutu */
+}
+
+/* Durum paneli (kamera durumu gösterimi) */
+.status-panel {
+  max-width: 280px !important;  /* Maksimum genişlik */
+  padding: 12px !important;     /* İç boşluk */
+  font-size: 11px !important;   /* Font boyutu */
+}
+
+.status-panel > div {
+  font-size: 12px !important;   /* Alt elementlerin font boyutu */
+}
+
+/* Debug video penceresi */
+.debug-video {
+  width: 150px !important;      /* Genişlik */
+  height: 112px !important;     /* Yükseklik */
+  top: 10px !important;         /* Üst kenardan uzaklık */
+  right: 10px !important;       /* Sağ kenardan uzaklık */
+}
+
+/* ===== TABLET STİLLERİ (768px ve altı) ===== */
+@media (max-width: 768px) {
+  /* Kontrol paneli ayarları */
+  .controls-container {
+    bottom: 50px !important;     /* Alt kenardan daha yakın */
+    gap: 6px !important;         /* Daha az boşluk */
+  }
+
+  /* Şekil butonları - tablet boyutu */
+  .shape-button {
+    padding: 6px 12px !important; /* Daha küçük padding */
+    font-size: 11px !important;   /* Daha küçük font */
+  }
+
+  /* Kontrol grupları - tablet */
+  .zoom-controls,
+  .rotation-controls {
+    margin-left: 8px !important;  /* Daha az sol boşluk */
+  }
+
+  /* Kontrol butonları - tablet */
+  .zoom-controls button,
+  .rotation-controls button {
+    padding: 6px 10px !important; /* Daha küçük padding */
+    font-size: 14px !important;   /* Daha küçük font */
+  }
+
+  /* Durum paneli - tablet */
+  .status-panel {
+    max-width: 250px !important;  /* Daha dar panel */
+    padding: 10px !important;     /* Daha az padding */
+    font-size: 10px !important;   /* Daha küçük font */
+    top: 10px !important;         /* Üst pozisyon */
+    left: 10px !important;        /* Sol pozisyon */
+  }
+
+  .status-panel > div {
+    font-size: 11px !important;   /* Alt elementler */
+  }
+
+  .status-panel div[style*="fontSize: '11px'"] {
+    font-size: 9px !important;    /* Spesifik elementler */
+  }
+
+  /* Debug video - tablet */
+  .debug-video {
+    width: 120px !important;      /* Daha küçük video */
+    height: 90px !important;      /* Daha küçük yükseklik */
+  }
+}
+
+/* ===== MOBİL STİLLERİ (480px ve altı) ===== */
+@media (max-width: 480px) {
+  /* Kontrol paneli - mobil optimizasyonu */
+  .controls-container {
+    bottom: 40px !important;      /* Daha yakın alt pozisyon */
+    left: 50% !important;         /* Yatay ortalama */
+    transform: translateX(-50%) !important; /* Tam ortalama */
+    width: calc(100% - 20px) !important;   /* Tam genişlik - margin */
+    gap: 5px !important;          /* Minimal boşluk */
+    justify-content: center !important;    /* İçeriği ortala */
+  }
+
+  /* Şekil butonları - mobil */
+  .shape-button {
+    padding: 5px 10px !important; /* Minimal padding */
+    font-size: 10px !important;   /* Küçük font */
+    flex: 1 1 auto;               /* Esnek boyutlandırma */
+    min-width: 60px;              /* Minimum genişlik */
+  }
+
+  /* Kontrol grupları - mobil */
+  .zoom-controls,
+  .rotation-controls {
+    margin-left: 5px !important;  /* Minimal sol boşluk */
+    gap: 3px !important;          /* Butonlar arası boşluk */
+  }
+
+  /* Kontrol butonları - mobil */
+  .zoom-controls button,
+  .rotation-controls button {
+    padding: 5px 8px !important;  /* Minimal padding */
+    font-size: 12px !important;   /* Küçük font */
+  }
+
+  /* Durum paneli - mobil tam genişlik */
+  .status-panel {
+    max-width: calc(100% - 20px) !important; /* Tam genişlik */
+    width: calc(100% - 20px) !important;     /* Genişlik ayarı */
+    padding: 8px !important;      /* Minimal padding */
+    font-size: 9px !important;    /* Çok küçük font */
+    top: 10px !important;         /* Üst pozisyon */
+    left: 10px !important;        /* Sol pozisyon */
+    right: 10px !important;       /* Sağ pozisyon */
+  }
+
+  /* Durum paneli alt elementleri */
+  .status-panel > div {
+    font-size: 10px !important;   /* Alt elementler */
+    margin-bottom: 8px !important; /* Alt boşluk */
+  }
+
+  .status-panel div[style*="fontSize: '11px'"] {
+    font-size: 8px !important;    /* Spesifik elementler */
+  }
+
+  .status-panel div[style*="fontSize: '10px'"] {
+    font-size: 8px !important;    /* Diğer spesifik elementler */
+  }
+
+  /* Debug video - mobil */
+  .debug-video {
+    width: 100px !important;      /* Çok küçük video */
+    height: 75px !important;      /* Çok küçük yükseklik */
+    top: 5px !important;          /* Üst kenar */
+    right: 5px !important;        /* Sağ kenar */
+  }
+}
+
+/* ===== ÇOK KÜÇÜK MOBİL CİHAZLAR (360px ve altı) ===== */
+@media (max-width: 360px) {
+  /* Şekil butonları - çok küçük ekranlar */
+  .shape-button {
+    font-size: 9px !important;    /* En küçük font */
+    padding: 4px 8px !important;  /* En küçük padding */
+  }
+
+  /* Durum paneli - çok küçük ekranlar */
+  .status-panel {
+    font-size: 8px !important;    /* En küçük font */
+    padding: 6px !important;      /* En küçük padding */
+  }
+
+  .status-panel > div {
+    font-size: 9px !important;    /* Alt elementler */
+  }
+}
+
+/* ===== FOOTER (ALT BİLGİ) STİLLERİ ===== */
+
+/* Footer temel stilleri */
+.footer {
+  bottom: 10px !important;       /* Alt kenardan uzaklık */
+}
+
+/* Footer link stilleri */
+.footer a {
+  transition: color 0.3s;        /* Renk geçiş efekti */
+}
+
+/* Footer link hover efekti */
+.footer a:hover {
+  color: rgba(255,255,255,1) !important; /* Tam beyaz renk */
+}
+
+/* Footer logo stilleri */
+.footer img {
+  transition: transform 0.3s;    /* Dönüşüm geçiş efekti */
+}
+
+/* Footer logo hover efekti */
+.footer a:hover img {
+  transform: scale(1.1);         /* %10 büyütme efekti */
+}
+
+/* ===== FOOTER RESPONSİVE STİLLERİ ===== */
+
+/* Footer tablet stilleri */
+@media (max-width: 768px) {
+  .footer {
+    bottom: 5px !important;       /* Daha yakın alt pozisyon */
+  }
+
+  .footer a {
+    font-size: 11px !important;   /* Daha küçük font */
+    gap: 6px !important;          /* Elementler arası boşluk */
+  }
+
+  .footer img {
+    width: 20px !important;       /* Daha küçük logo */
+    height: 20px !important;      /* Daha küçük logo yüksekliği */
+  }
+}
+
+/* Footer mobil stilleri */
+@media (max-width: 480px) {
+  .footer {
+    bottom: 5px !important;       /* Yakın alt pozisyon */
+  }
+
+  .footer a {
+    font-size: 10px !important;   /* Küçük font */
+    gap: 5px !important;          /* Az boşluk */
+  }
+
+  .footer img {
+    width: 18px !important;       /* Küçük logo */
+    height: 18px !important;      /* Küçük logo yüksekliği */
+  }
+
+  /* Mobilde metin gizle, sadece logo göster */
+  .footer span {
+    display: none;                /* Metni gizle */
+  }
+}
+
+

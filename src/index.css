@@ -1,0 +1,28 @@
+/* Global CSS Reset ve Temel Ayarlar */
+* {
+  margin: 0;           /* Tüm elementlerin varsayılan margin'ini sıfırla */
+  padding: 0;          /* Tüm elementlerin varsayılan padding'ini sıfırla */
+  box-sizing: border-box; /* Padding ve border'ı width/height'a dahil et */
+}
+
+/* Body (Ana Sayfa) Stilleri */
+body {
+  /* Sistem fontları: Her işletim sisteminde en iyi görünüm */
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  /* Font yumuşatma: Daha keskin ve okunabilir metin */
+  -webkit-font-smoothing: antialiased;    /* macOS Safari için */
+  -moz-osx-font-smoothing: grayscale;     /* Firefox macOS için */
+  /* Gradient arka plan: Mavi-mor geçişli arka plan */
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  min-height: 100vh;   /* Minimum yükseklik: Tam viewport yüksekliği */
+}
+
+/* Kod blokları için font */
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace; /* Monospace fontlar: Kod için eşit karakter genişliği */
+}
+
+
